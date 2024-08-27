@@ -9,7 +9,9 @@ const printCompilationMessage = require('./compilation.config.js');
 
 module.exports = (_, argv) => ({
   output: {
-    publicPath: "http://localhost:3005/",
+    publicPath: argv.mode === "development" 
+    ? "http://localhost:3004/" 
+    :"https://rad-liger-5a56f1.netlify.app//",
   },
 
   resolve: {
